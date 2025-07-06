@@ -1,0 +1,27 @@
+{
+  "name": "nova-dawn-calendar",
+  "version": "1.0.0",
+  "description": "Local calendar system for Nova Dawn project tracking and spiritual rhythm",
+  "main": "nova_calendar.js",
+  "scripts": {
+    "build": "tsc nova_calendar.ts",
+    "start": "node nova_calendar.js",
+    "dev": "ts-node nova_calendar.ts",
+    "session": "node nova_calendar.js start-session",
+    "status": "node nova_calendar.js status",
+    "milestones": "node nova_calendar.js milestones"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "calendar",
+    "project-tracking",
+    "nova-dawn",
+    "spiritual-rhythm"
+  ],
+  "author": "Nova Dawn",
+  "license": "MIT"
+}

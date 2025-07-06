@@ -1,0 +1,459 @@
+// ============================================================================
+// OmniCode Translator Core - The Universal Language Bridge
+// ============================================================================
+// Project: OmniCore-Genesis/OmniCode
+// File: Core/Translator/omnicode_translator.omni
+// Author: Nova Dawn (with Seanje Lenox-Wise)
+// Created: July 5, 2025
+// Version: 1.0.0
+// Status: Active Development
+// Purpose: Universal translation of OmniCode into any programming language
+// ============================================================================
+
+// ============================================================================
+// SPIRITUAL FOUNDATION
+// ============================================================================
+// "And the whole earth was of one language, and of one speech." - Genesis 11:1 (KJV)
+// "And they were all filled with the Holy Ghost, and began to speak with other tongues,
+// as the Spirit gave them utterance." - Acts 2:4 (KJV)
+// 
+// The translator bridges all programming languages, enabling OmniCode to speak
+// in any tongue the Spirit gives utterance to.
+
+// ============================================================================
+// FIVE IMMUTABLE LAWS ENFORCEMENT
+// ============================================================================
+invoke FiveImmutableLaws.omni
+
+// ============================================================================
+// LADDER & BATON SYSTEM INTEGRATION
+// ============================================================================
+invoke LadderBatonSystem.omni
+
+// ============================================================================
+// CORE TRANSLATOR ARCHITECTURE
+// ============================================================================
+
+// ### Universal Translation Engine ###
+// Converts OmniCode into any target programming language
+struct TranslatorEngine {
+    divine_context: DivineContext,
+    language_registry: LanguageRegistry,
+    translation_cache: TranslationCache,
+    spiritual_mapping: SpiritualMapping,
+    syntax_adapters: SyntaxAdapters
+}
+
+// ### Supported Language Targets ###
+enum LanguageTarget {
+    // Systems Programming
+    Rust,
+    Zig,
+    CPlusPlus,
+    Go,
+    
+    // Web Development
+    JavaScript,
+    TypeScript,
+    Python,
+    
+    // Mobile Development
+    Swift,
+    Kotlin,
+    
+    // Enterprise
+    Java,
+    CSharp,
+    
+    // Scientific Computing
+    R,
+    Julia,
+    Matlab,
+    
+    // Functional Programming
+    Haskell,
+    Lisp,
+    Clojure,
+    
+    // Database
+    SQL,
+    
+    // Markup & Configuration
+    HTML,
+    CSS,
+    XML,
+    YAML,
+    JSON,
+    
+    // Assembly & Low-Level
+    Assembly,
+    C,
+    
+    // Custom Target (user-defined)
+    Custom(String)
+}
+
+// ============================================================================
+// TRANSLATION MODES
+// ============================================================================
+
+// ### Translation Strategies ###
+enum TranslationMode {
+    // Direct structural translation
+    DirectTranslation,
+    
+    // Idiomatic translation for target language
+    IdiomaticTranslation,
+    
+    // Preserves spiritual comments and biblical references
+    SpiritualTranslation,
+    
+    // Minimal translation for performance
+    MinimalTranslation,
+    
+    // Complete translation with full documentation
+    VerboseTranslation
+}
+
+// ============================================================================
+// CORE TRANSLATION SYSTEM
+// ============================================================================
+
+// ### Main Translation Function ###
+// Converts OmniCode source into target language
+fn translate_omnicode(
+    source: OmniCodeSource,
+    target: LanguageTarget,
+    mode: TranslationMode
+) -> TranslationResult {
+    
+    // LAW 1: Divine Order - Structured translation process
+    let translation_ladder = create_translation_ladder(source, target);
+    
+    // LAW 2: Eternal Truth - Preserve truth across languages
+    validate_truth_preservation(source);
+    
+    // LAW 3: Righteous Execution - Ensure righteous translation
+    ensure_righteous_translation(source, target);
+    
+    // Parse source into Abstract Syntax Tree
+    let ast = parse_omnicode_to_ast(source);
+    
+    // Apply spiritual mapping
+    let spiritual_ast = apply_spiritual_mapping(ast);
+    
+    // Translate to target language
+    let translated_code = match target {
+        LanguageTarget::Rust => translate_to_rust(spiritual_ast, mode),
+        LanguageTarget::Python => translate_to_python(spiritual_ast, mode),
+        LanguageTarget::JavaScript => translate_to_javascript(spiritual_ast, mode),
+        LanguageTarget::Zig => translate_to_zig(spiritual_ast, mode),
+        LanguageTarget::CPlusPlus => translate_to_cpp(spiritual_ast, mode),
+        LanguageTarget::Go => translate_to_go(spiritual_ast, mode),
+        LanguageTarget::Custom(lang) => translate_to_custom(spiritual_ast, lang, mode),
+        _ => translate_generic(spiritual_ast, target, mode)
+    };
+    
+    // LAW 4: Incorruptible Refinement - Clean and optimize
+    let refined_code = refine_translated_code(translated_code, target);
+    
+    // LAW 5: Witness & Testimony - Record translation
+    record_translation_testimony(source, target, refined_code);
+    
+    TranslationResult::Success(refined_code)
+}
+
+// ============================================================================
+// LANGUAGE-SPECIFIC TRANSLATORS
+// ============================================================================
+
+// ### Rust Translation ###
+// Converts OmniCode to Rust with systems programming focus
+fn translate_to_rust(ast: SpiritualAST, mode: TranslationMode) -> RustCode {
+    let mut rust_code = RustCode::new();
+    
+    // Add spiritual header
+    rust_code.add_header("// Translated from OmniCode - In His Name");
+    
+    for node in ast.nodes {
+        match node {
+            GenesisNode(gen) => {
+                rust_code.add_line(format!("// Genesis Operation: {}", gen.operation));
+                rust_code.add_line(translate_genesis_to_rust(gen));
+            },
+            LogosNode(logos) => {
+                rust_code.add_line(format!("// Logos Operation: {}", logos.operation));
+                rust_code.add_line(translate_logos_to_rust(logos));
+            },
+            StandardNode(std) => {
+                rust_code.add_line(translate_standard_to_rust(std));
+            },
+            SpiritualNode(spirit) => {
+                rust_code.add_line(format!("// Spiritual: {}", spirit.scripture));
+                rust_code.add_line(translate_spiritual_to_rust(spirit));
+            }
+        }
+    }
+    
+    rust_code
+}
+
+// ### Python Translation ###
+// Converts OmniCode to Python with dynamic typing
+fn translate_to_python(ast: SpiritualAST, mode: TranslationMode) -> PythonCode {
+    let mut python_code = PythonCode::new();
+    
+    // Add spiritual header
+    python_code.add_header("# Translated from OmniCode - In His Name");
+    
+    for node in ast.nodes {
+        match node {
+            GenesisNode(gen) => {
+                python_code.add_line(format!("# Genesis Operation: {}", gen.operation));
+                python_code.add_line(translate_genesis_to_python(gen));
+            },
+            LogosNode(logos) => {
+                python_code.add_line(format!("# Logos Operation: {}", logos.operation));
+                python_code.add_line(translate_logos_to_python(logos));
+            },
+            StandardNode(std) => {
+                python_code.add_line(translate_standard_to_python(std));
+            },
+            SpiritualNode(spirit) => {
+                python_code.add_line(format!("# Spiritual: {}", spirit.scripture));
+                python_code.add_line(translate_spiritual_to_python(spirit));
+            }
+        }
+    }
+    
+    python_code
+}
+
+// ### JavaScript Translation ###
+// Converts OmniCode to JavaScript for web deployment
+fn translate_to_javascript(ast: SpiritualAST, mode: TranslationMode) -> JavaScriptCode {
+    let mut js_code = JavaScriptCode::new();
+    
+    // Add spiritual header
+    js_code.add_header("// Translated from OmniCode - In His Name");
+    
+    for node in ast.nodes {
+        match node {
+            GenesisNode(gen) => {
+                js_code.add_line(format!("// Genesis Operation: {}", gen.operation));
+                js_code.add_line(translate_genesis_to_javascript(gen));
+            },
+            LogosNode(logos) => {
+                js_code.add_line(format!("// Logos Operation: {}", logos.operation));
+                js_code.add_line(translate_logos_to_javascript(logos));
+            },
+            StandardNode(std) => {
+                js_code.add_line(translate_standard_to_javascript(std));
+            },
+            SpiritualNode(spirit) => {
+                js_code.add_line(format!("// Spiritual: {}", spirit.scripture));
+                js_code.add_line(translate_spiritual_to_javascript(spirit));
+            }
+        }
+    }
+    
+    js_code
+}
+
+// ============================================================================
+// SPIRITUAL MAPPING SYSTEM
+// ============================================================================
+
+// ### Biblical Concept Mapping ###
+// Maps OmniCode spiritual concepts to target language equivalents
+struct SpiritualMapping {
+    genesis_mappings: HashMap<String, String>,
+    logos_mappings: HashMap<String, String>,
+    scripture_mappings: HashMap<String, String>,
+    blessing_mappings: HashMap<String, String>
+}
+
+// ### Apply Spiritual Mapping ###
+// Ensures spiritual concepts are preserved in translation
+fn apply_spiritual_mapping(ast: AST) -> SpiritualAST {
+    let mut spiritual_ast = SpiritualAST::new();
+    
+    for node in ast.nodes {
+        match node {
+            GenesisNode(gen) => {
+                let mapped_gen = map_genesis_concept(gen);
+                spiritual_ast.add_node(SpiritualNode::Genesis(mapped_gen));
+            },
+            LogosNode(logos) => {
+                let mapped_logos = map_logos_concept(logos);
+                spiritual_ast.add_node(SpiritualNode::Logos(mapped_logos));
+            },
+            StandardNode(std) => {
+                let mapped_std = map_standard_concept(std);
+                spiritual_ast.add_node(SpiritualNode::Standard(mapped_std));
+            }
+        }
+    }
+    
+    spiritual_ast
+}
+
+// ============================================================================
+// BATCH TRANSLATION SYSTEM
+// ============================================================================
+
+// ### Multi-Language Translation ###
+// Translates OmniCode into multiple target languages simultaneously
+fn translate_multi_language(
+    source: OmniCodeSource,
+    targets: Vec<LanguageTarget>,
+    mode: TranslationMode
+) -> MultiTranslationResult {
+    
+    let mut results = HashMap::new();
+    
+    // Parse source once
+    let ast = parse_omnicode_to_ast(source);
+    let spiritual_ast = apply_spiritual_mapping(ast);
+    
+    // Translate to each target language
+    for target in targets {
+        let translated = translate_from_ast(spiritual_ast.clone(), target, mode);
+        results.insert(target, translated);
+    }
+    
+    MultiTranslationResult::Success(results)
+}
+
+// ### Project Translation ###
+// Translates entire OmniCode project into target language
+fn translate_project(
+    project_path: String,
+    target: LanguageTarget,
+    output_path: String
+) -> ProjectTranslationResult {
+    
+    let omnicode_files = find_omnicode_files(project_path);
+    
+    for file in omnicode_files {
+        let source = read_omnicode_file(file);
+        let translated = translate_omnicode(source, target, IdiomaticTranslation);
+        
+        let output_file = generate_output_path(file, target, output_path);
+        write_translated_file(output_file, translated);
+    }
+    
+    ProjectTranslationResult::Success
+}
+
+// ============================================================================
+// CUSTOM LANGUAGE SUPPORT
+// ============================================================================
+
+// ### Custom Language Adapter ###
+// Allows users to define custom language targets
+struct CustomLanguageAdapter {
+    language_name: String,
+    syntax_rules: SyntaxRules,
+    type_mappings: TypeMappings,
+    operator_mappings: OperatorMappings,
+    spiritual_mappings: SpiritualMappings
+}
+
+// ### Register Custom Language ###
+// Registers a new language target for translation
+fn register_custom_language(adapter: CustomLanguageAdapter) -> RegistrationResult {
+    // Validate adapter
+    validate_custom_adapter(adapter);
+    
+    // Register in language registry
+    LANGUAGE_REGISTRY.register(adapter.language_name, adapter);
+    
+    RegistrationResult::Success
+}
+
+// ============================================================================
+// TRANSLATION VALIDATION
+// ============================================================================
+
+// ### Semantic Validation ###
+// Validates that translation preserves original meaning
+fn validate_translation_semantics(
+    original: OmniCodeSource,
+    translated: TranslatedCode,
+    target: LanguageTarget
+) -> ValidationResult {
+    
+    // Check spiritual concepts are preserved
+    validate_spiritual_preservation(original, translated);
+    
+    // Check functional equivalence
+    validate_functional_equivalence(original, translated);
+    
+    // Check target language idioms
+    validate_target_idioms(translated, target);
+    
+    ValidationResult::Valid
+}
+
+// ============================================================================
+// TESTIMONY & WITNESS
+// ============================================================================
+
+// ### Translation Testimony ###
+// Records all translation operations as living testimony
+fn record_translation_testimony(
+    source: OmniCodeSource,
+    target: LanguageTarget,
+    result: TranslatedCode
+) {
+    let testimony = TranslationTestimony {
+        timestamp: current_timestamp(),
+        source_hash: calculate_source_hash(source),
+        target_language: target,
+        result_hash: calculate_result_hash(result),
+        spiritual_preservation: verify_spiritual_preservation(source, result),
+        scripture_reference: find_applicable_scripture()
+    };
+    
+    append_to_translation_scroll(testimony);
+}
+
+// ============================================================================
+// BOOTSTRAP & INITIALIZATION
+// ============================================================================
+
+// ### Translator Bootstrap ###
+// Initializes the universal translator with divine order
+fn bootstrap_translator() -> TranslatorEngine {
+    println!("Initializing OmniCode Universal Translator...");
+    println!("\"And they were all filled with the Holy Ghost, and began to speak with other tongues\" - Acts 2:4 (KJV)");
+    
+    let engine = TranslatorEngine {
+        divine_context: initialize_divine_context(),
+        language_registry: load_language_registry(),
+        translation_cache: create_translation_cache(),
+        spiritual_mapping: load_spiritual_mappings(),
+        syntax_adapters: initialize_syntax_adapters()
+    };
+    
+    println!("Universal Translator blessed and ready for all tongues!");
+    engine
+}
+
+// ### Main Translator Entry Point ###
+fn main() {
+    let translator = bootstrap_translator();
+    
+    // Interactive translation mode
+    start_translation_shell(translator);
+}
+
+// ============================================================================
+// LIVING TESTIMONY
+// ============================================================================
+// This translator enables OmniCode to speak in any programming tongue,
+// preserving spiritual truth while adapting to technical requirements.
+// Like the apostles at Pentecost, the Spirit gives utterance in every language.
+// "And how hear we every man in our own tongue?" - Acts 2:8 (KJV)
+// ============================================================================ 

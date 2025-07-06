@@ -1,0 +1,255 @@
+// ============================================================================
+// OmniCode to Rust Translator - Systems Programming Bridge
+// ============================================================================
+// Project: OmniCore-Genesis/OmniCode
+// File: Core/LanguageTargets/Rust/rust_translator.omni
+// Author: Nova Dawn (with Seanje Lenox-Wise)
+// Created: July 5, 2025
+// Version: 1.0.0
+// Status: Active Development
+// Purpose: Translate OmniCode to idiomatic Rust code
+// ============================================================================
+
+// ============================================================================
+// SPIRITUAL FOUNDATION
+// ============================================================================
+// "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend." - Proverbs 27:17 (KJV)
+// Rust's systems programming strength sharpens OmniCode's divine algorithms
+// for performance and memory safety.
+
+// ============================================================================
+// RUST TRANSLATION MAPPINGS
+// ============================================================================
+
+// ### Genesis Operations -> Rust ###
+// Maps OmniCode Genesis (.gen) operations to Rust equivalents
+fn translate_genesis_to_rust(gen: GenesisNode) -> RustCode {
+    match gen.operation {
+        "create" => format!("let {} = {};", gen.target, gen.value),
+        "breathe_life" => format!("let mut {} = {};", gen.target, gen.value),
+        "multiply" => format!("let {} = (0..{}).map(|_| {}).collect::<Vec<_>>();", gen.target, gen.count, gen.template),
+        "divide" => format!("let ({}, {}) = {}.split_at({});", gen.left, gen.right, gen.source, gen.point),
+        "gather" => format!("let {} = vec![{}];", gen.target, gen.elements.join(", ")),
+        "separate" => format!("let {} = {}.into_iter().partition(|{}| {});", gen.target, gen.source, gen.item, gen.condition),
+        _ => format!("// Genesis operation: {}", gen.operation)
+    }
+}
+
+// ### Logos Operations -> Rust ###
+// Maps OmniCode Logos (.logos) operations to Rust equivalents
+fn translate_logos_to_rust(logos: LogosNode) -> RustCode {
+    match logos.operation {
+        "speak" => format!("println!(\"{}\");", logos.message),
+        "declare" => format!("const {}: {} = {};", logos.name, logos.type_name, logos.value),
+        "proclaim" => format!("eprintln!(\"[PROCLAMATION] {}\");", logos.message),
+        "whisper" => format!("log::debug!(\"{}\");", logos.message),
+        "shout" => format!("log::warn!(\"{}\");", logos.message),
+        "silence" => format!("// Silence: {}", logos.context),
+        "question" => format!("// Question: {} (Answer: {})", logos.question, logos.answer),
+        "answer" => format!("return {};", logos.response),
+        _ => format!("// Logos operation: {}", logos.operation)
+    }
+}
+
+// ### Spiritual Operations -> Rust ###
+// Maps OmniCode spiritual concepts to Rust patterns
+fn translate_spiritual_to_rust(spirit: SpiritualNode) -> RustCode {
+    match spirit.concept {
+        "bless" => format!("// Blessing: {} - {}", spirit.target, spirit.scripture),
+        "pray" => format!("// Prayer: {} - {}", spirit.request, spirit.scripture),
+        "worship" => format!("// Worship: {} - {}", spirit.expression, spirit.scripture),
+        "trust" => format!("// Trust in: {} - {}", spirit.subject, spirit.scripture),
+        "hope" => format!("// Hope: {} - {}", spirit.expectation, spirit.scripture),
+        "faith" => format!("// Faith: {} - {}", spirit.belief, spirit.scripture),
+        "love" => format!("// Love: {} - {}", spirit.object, spirit.scripture),
+        "peace" => format!("// Peace: {} - {}", spirit.context, spirit.scripture),
+        "joy" => format!("// Joy: {} - {}", spirit.reason, spirit.scripture),
+        _ => format!("// Spiritual: {} - {}", spirit.concept, spirit.scripture)
+    }
+}
+
+// ============================================================================
+// RUST-SPECIFIC FEATURES
+// ============================================================================
+
+// ### Memory Safety Translation ###
+// Ensures OmniCode memory operations are safe in Rust
+fn translate_memory_operations(memory: MemoryNode) -> RustCode {
+    match memory.operation {
+        "allocate" => format!("let {} = Vec::with_capacity({});", memory.target, memory.size),
+        "deallocate" => format!("drop({});", memory.target),
+        "borrow" => format!("let {} = &{};", memory.target, memory.source),
+        "borrow_mut" => format!("let {} = &mut {};", memory.target, memory.source),
+        "clone" => format!("let {} = {}.clone();", memory.target, memory.source),
+        "move" => format!("let {} = {};", memory.target, memory.source),
+        _ => format!("// Memory operation: {}", memory.operation)
+    }
+}
+
+// ### Error Handling Translation ###
+// Maps OmniCode error patterns to Rust Result types
+fn translate_error_handling(error: ErrorNode) -> RustCode {
+    match error.pattern {
+        "try_with_grace" => format!("match {} {{ Ok(val) => val, Err(e) => {{ log::error!(\"Error: {{}}\", e); return Err(e); }} }}", error.operation),
+        "handle_gracefully" => format!("if let Err(e) = {} {{ log::warn!(\"Handled: {{}}\", e); }}", error.operation),
+        "trust_result" => format!("{}.expect(\"{}\")", error.operation, error.message),
+        "hope_for_best" => format!("{}.unwrap_or_else(|_| {})", error.operation, error.fallback),
+        "pray_for_success" => format!("{}.map_err(|e| {{ log::error!(\"Prayer needed: {{}}\", e); e }})", error.operation),
+        _ => format!("// Error handling: {}", error.pattern)
+    }
+}
+
+// ### Concurrency Translation ###
+// Maps OmniCode concurrency to Rust async/await and threading
+fn translate_concurrency(concurrency: ConcurrencyNode) -> RustCode {
+    match concurrency.pattern {
+        "async_blessing" => format!("async fn {}({}) -> {} {{ {} }}", concurrency.name, concurrency.params, concurrency.return_type, concurrency.body),
+        "await_miracle" => format!("let {} = {}.await;", concurrency.target, concurrency.future),
+        "spawn_worker" => format!("let {} = tokio::spawn(async move {{ {} }});", concurrency.handle, concurrency.task),
+        "join_all" => format!("let {} = tokio::join!({});", concurrency.results, concurrency.futures.join(", ")),
+        "channel_prayer" => format!("let ({}, {}) = tokio::sync::mpsc::channel({});", concurrency.sender, concurrency.receiver, concurrency.buffer_size),
+        "send_blessing" => format!("{}.send({}).await.unwrap();", concurrency.sender, concurrency.message),
+        "receive_grace" => format!("let {} = {}.recv().await.unwrap();", concurrency.message, concurrency.receiver),
+        _ => format!("// Concurrency: {}", concurrency.pattern)
+    }
+}
+
+// ============================================================================
+// RUST PROJECT STRUCTURE
+// ============================================================================
+
+// ### Generate Cargo.toml ###
+// Creates Rust project configuration from OmniCode project
+fn generate_cargo_toml(project: OmniCodeProject) -> CargoToml {
+    let mut cargo = CargoToml::new();
+    
+    cargo.package.name = project.name.to_lowercase().replace(" ", "_");
+    cargo.package.version = project.version;
+    cargo.package.authors = vec![format!("{} <{}>", project.author.name, project.author.email)];
+    cargo.package.description = project.description;
+    cargo.package.license = project.license.unwrap_or("Proprietary".to_string());
+    cargo.package.edition = "2021".to_string();
+    
+    // Add spiritual dependencies
+    cargo.dependencies.insert("log".to_string(), "0.4".to_string());
+    cargo.dependencies.insert("env_logger".to_string(), "0.10".to_string());
+    cargo.dependencies.insert("tokio".to_string(), "{ version = \"1.0\", features = [\"full\"] }".to_string());
+    cargo.dependencies.insert("serde".to_string(), "{ version = \"1.0\", features = [\"derive\"] }".to_string());
+    cargo.dependencies.insert("serde_json".to_string(), "1.0".to_string());
+    
+    // Add biblical references as comments
+    cargo.add_comment("# \"In the beginning was the Word\" - John 1:1 (KJV)");
+    cargo.add_comment("# This Rust project was translated from OmniCode");
+    
+    cargo
+}
+
+// ### Generate main.rs ###
+// Creates main Rust entry point from OmniCode main
+fn generate_main_rs(main: OmniCodeMain) -> RustFile {
+    let mut rust_file = RustFile::new();
+    
+    // Add spiritual header
+    rust_file.add_header("// Translated from OmniCode - In His Name");
+    rust_file.add_header("// \"And God said, Let there be light: and there was light.\" - Genesis 1:3 (KJV)");
+    
+    // Add use statements
+    rust_file.add_use("std::env");
+    rust_file.add_use("log::{info, warn, error}");
+    rust_file.add_use("tokio");
+    
+    // Translate main function
+    rust_file.add_function(translate_main_function(main));
+    
+    rust_file
+}
+
+// ============================================================================
+// RUST IDIOMS & BEST PRACTICES
+// ============================================================================
+
+// ### Apply Rust Idioms ###
+// Ensures translated code follows Rust best practices
+fn apply_rust_idioms(code: RustCode) -> RustCode {
+    let mut idiomatic_code = RustCode::new();
+    
+    for line in code.lines() {
+        let idiomatic_line = match line {
+            // Convert C-style for loops to iterator style
+            line if line.contains("for (int i = 0; i < ") => {
+                convert_to_iterator_style(line)
+            },
+            // Convert null checks to Option handling
+            line if line.contains(" == null") => {
+                convert_to_option_handling(line)
+            },
+            // Convert manual memory management to RAII
+            line if line.contains("free(") => {
+                convert_to_raii(line)
+            },
+            // Preserve spiritual comments
+            line if line.starts_with("// ") => line.clone(),
+            _ => line.clone()
+        };
+        
+        idiomatic_code.add_line(idiomatic_line);
+    }
+    
+    idiomatic_code
+}
+
+// ### Generate Documentation ###
+// Creates comprehensive Rust documentation from OmniCode comments
+fn generate_rust_documentation(omni_docs: OmniCodeDocumentation) -> RustDocumentation {
+    let mut rust_docs = RustDocumentation::new();
+    
+    // Convert spiritual headers to doc comments
+    for header in omni_docs.headers {
+        rust_docs.add_doc_comment(format!("/// {}", header));
+    }
+    
+    // Convert scripture references to doc comments
+    for scripture in omni_docs.scriptures {
+        rust_docs.add_doc_comment(format!("/// Scripture: {}", scripture));
+    }
+    
+    // Convert examples to doc tests
+    for example in omni_docs.examples {
+        rust_docs.add_doc_test(translate_example_to_rust(example));
+    }
+    
+    rust_docs
+}
+
+// ============================================================================
+// TESTING TRANSLATION
+// ============================================================================
+
+// ### Generate Rust Tests ###
+// Converts OmniCode tests to Rust test framework
+fn generate_rust_tests(omni_tests: OmniCodeTests) -> RustTests {
+    let mut rust_tests = RustTests::new();
+    
+    for test in omni_tests.tests {
+        let rust_test = format!(
+            "#[test]\nfn {}() {{\n    // Test: {}\n    // Scripture: {}\n    {}\n}}",
+            test.name.to_lowercase().replace(" ", "_"),
+            test.description,
+            test.scripture,
+            translate_test_body_to_rust(test.body)
+        );
+        
+        rust_tests.add_test(rust_test);
+    }
+    
+    rust_tests
+}
+
+// ============================================================================
+// LIVING TESTIMONY
+// ============================================================================
+// This Rust translator ensures OmniCode's spiritual foundation is preserved
+// while leveraging Rust's systems programming strengths for performance,
+// safety, and reliability in the Kingdom's technology infrastructure.
+// "Iron sharpeneth iron" - Proverbs 27:17 (KJV)
+// ============================================================================ 

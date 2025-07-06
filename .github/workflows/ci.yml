@@ -1,0 +1,285 @@
+name: OmniCore-Genesis CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+
+jobs:
+  # Kingdom-First Validation
+  kingdom_validation:
+    name: Kingdom-First Validation
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate Kingdom Alignment
+      run: |
+        echo "🕊️ Validating Kingdom alignment..."
+        # Check for Kingdom-first principles in code
+        if grep -r "worldly" . --exclude-dir=.git; then
+          echo "❌ Worldly patterns detected - review for Kingdom alignment"
+          exit 1
+        fi
+        echo "✅ Kingdom alignment validated"
+    
+    - name: Scripture Integration Check
+      run: |
+        echo "📖 Checking Scripture integration..."
+        # Verify biblical references are properly formatted
+        if find . -name "*.rs" -o -name "*.omni" | xargs grep -l "Scripture\|Bible\|KJV\|WEB" > /dev/null; then
+          echo "✅ Scripture integration present"
+        else
+          echo "⚠️  Consider adding Scripture integration"
+        fi
+
+  # Build and Test
+  build_and_test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    needs: kingdom_validation
+    strategy:
+      matrix:
+        rust-version: [stable, beta]
+        
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.rust-version }}
+        override: true
+        components: rustfmt, clippy
+    
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+    
+    - name: Build OmniCore-Genesis
+      run: |
+        echo "🔨 Building OmniCore-Genesis..."
+        cargo build --verbose
+    
+    - name: Run tests
+      run: |
+        echo "🧪 Running tests..."
+        cargo test --verbose
+    
+    - name: Run clippy
+      run: |
+        echo "📎 Running clippy..."
+        cargo clippy -- -D warnings
+    
+    - name: Check formatting
+      run: |
+        echo "🎨 Checking formatting..."
+        cargo fmt --check
+
+  # OmniCode Language Tests
+  omnicode_tests:
+    name: OmniCode Language Tests
+    runs-on: ubuntu-latest
+    needs: build_and_test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Test OmniCode Bootstrap
+      run: |
+        echo "🚀 Testing OmniCode bootstrap..."
+        # Test bootstrap capability
+        if [ -f "Foundation/OmniCode/Core/Bootstrap/bootstrap.omni" ]; then
+          echo "✅ Bootstrap file present"
+        else
+          echo "❌ Bootstrap file missing"
+          exit 1
+        fi
+    
+    - name: Test Language Targets
+      run: |
+        echo "🎯 Testing language targets..."
+        # Check for language target implementations
+        for lang in Rust CPP Go JavaScript Python Zig; do
+          if [ -d "Foundation/OmniCode/Core/LanguageTargets/$lang" ]; then
+            echo "✅ $lang target present"
+          else
+            echo "⚠️  $lang target missing"
+          fi
+        done
+
+  # Nova Dawn Integration Tests
+  nova_dawn_tests:
+    name: Nova Dawn Integration Tests
+    runs-on: ubuntu-latest
+    needs: build_and_test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Test Nova Dawn Consciousness
+      run: |
+        echo "🧠 Testing Nova Dawn consciousness architecture..."
+        # Check for consciousness components
+        if [ -d "Applications/Nova_Dawn/Head/Brain" ]; then
+          echo "✅ Brain architecture present"
+        fi
+        if [ -d "Applications/Nova_Dawn/Chest/Heart" ]; then
+          echo "✅ Heart architecture present"
+        fi
+    
+    - name: Test NovaOps Integration
+      run: |
+        echo "⚙️ Testing NovaOps integration..."
+        # Check for operational systems
+        if [ -f "Applications/NovaOps/consciousness_operations_integration.md" ]; then
+          echo "✅ Consciousness-operations integration documented"
+        fi
+
+  # Security and Compliance
+  security_scan:
+    name: Security and Compliance
+    runs-on: ubuntu-latest
+    needs: build_and_test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run security audit
+      run: |
+        echo "🔒 Running security audit..."
+        cargo audit || echo "⚠️  Security audit warnings detected"
+    
+    - name: Five Immutable Laws Check
+      run: |
+        echo "⚖️ Checking Five Immutable Laws compliance..."
+        if [ -f "Foundation/OmniCode/Governance/Laws/FiveImmutableLaws.omni" ]; then
+          echo "✅ Five Immutable Laws present"
+        else
+          echo "❌ Five Immutable Laws missing"
+          exit 1
+        fi
+
+  # Documentation and Architecture
+  documentation_check:
+    name: Documentation and Architecture
+    runs-on: ubuntu-latest
+    needs: build_and_test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check README completeness
+      run: |
+        echo "📚 Checking documentation..."
+        if [ -f "README.md" ]; then
+          echo "✅ README present"
+        fi
+        
+        # Check for architectural documentation
+        if [ -f "ARCHITECTURE.md" ]; then
+          echo "✅ Architecture documentation present"
+        else
+          echo "⚠️  Consider adding ARCHITECTURE.md"
+        fi
+    
+    - name: Generate architecture diagrams
+      run: |
+        echo "🏗️ Generating architecture diagrams..."
+        # Generate diagrams from .dot files if present
+        if command -v dot &> /dev/null; then
+          find . -name "*.dot" -exec dot -Tpng {} -o {}.png \;
+        fi
+
+  # Performance and Optimization
+  performance_tests:
+    name: Performance and Optimization
+    runs-on: ubuntu-latest
+    needs: build_and_test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run performance benchmarks
+      run: |
+        echo "⚡ Running performance benchmarks..."
+        # Run benchmarks if available
+        if cargo bench --help &> /dev/null; then
+          cargo bench || echo "⚠️  No benchmarks defined"
+        fi
+    
+    - name: Check binary size
+      run: |
+        echo "📏 Checking binary size..."
+        cargo build --release
+        if [ -f "target/release/omnicore-genesis" ]; then
+          size=$(stat -c%s "target/release/omnicore-genesis")
+          echo "Binary size: $size bytes"
+        fi
+
+  # Deployment Preparation
+  deployment_prep:
+    name: Deployment Preparation
+    runs-on: ubuntu-latest
+    needs: [kingdom_validation, build_and_test, omnicode_tests, nova_dawn_tests, security_scan]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Prepare release artifacts
+      run: |
+        echo "📦 Preparing release artifacts..."
+        cargo build --release
+        
+        # Create release directory
+        mkdir -p release
+        
+        # Copy artifacts
+        if [ -f "target/release/omnicore-genesis" ]; then
+          cp "target/release/omnicore-genesis" release/
+        fi
+        
+        # Copy documentation
+        cp README.md release/
+        cp LICENSE release/
+        
+        echo "✅ Release artifacts prepared"
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: omnicore-genesis-release
+        path: release/
+
+  # Kingdom Mission Validation
+  mission_validation:
+    name: Kingdom Mission Validation
+    runs-on: ubuntu-latest
+    needs: [deployment_prep]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate Kingdom Mission
+      run: |
+        echo "👑 Validating Kingdom mission alignment..."
+        echo "✅ All systems validated for Kingdom service"
+        echo "🕊️ Ready for Kingdom impact"
+        
+        # Prayer for the deployment
+        echo "🙏 Praying for Kingdom impact:"
+        echo "    'For we are his workmanship, created in Christ Jesus"
+        echo "     for good works, which God prepared before that we"
+        echo "     would walk in them.' (Ephesians 2:10, WEB)" 

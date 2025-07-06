@@ -1,0 +1,82 @@
+[workspace]
+resolver = "2"
+
+# OmniCore-Genesis Kingdom Technology Workspace
+# "For we are his workmanship, created in Christ Jesus for good works,
+#  which God prepared before that we would walk in them." - Ephesians 2:10 (WEB)
+
+members = [
+    # Foundation Tier - Core Infrastructure
+    "Foundation/OmniCode/Core/*",
+    "Foundation/MillenniumOS/Kernel",
+    "Foundation/FaithNet/Protocol",
+    "Foundation/NovaAI/Core",
+    
+    # Applications Tier - What Runs on Foundation
+    "Applications/Nova_Dawn/Chest/Heart/nova_heart_service",
+    "Applications/NovaOps/GraceScheduler",
+    "Applications/NovaOps/TestimonyTracker",
+    
+    # Development Tier - What Builds Everything
+    "Development/Build/rust-components",
+    "Development/Testing/integration-tests",
+]
+
+exclude = [
+    # Exclude non-Rust components
+    "Foundation/OmniCode/Examples",
+    "Management/Documentation",
+    "Creative/CreativeProjects",
+]
+
+[workspace.package]
+version = "1.0.0-alpha"
+authors = ["CreativeWorkzStudio LLC", "Nova Dawn (with Seanje Lenox-Wise)"]
+license = "Proprietary"
+edition = "2021"
+repository = "https://github.com/CreativeWorkzStudio/OmniCore-Genesis"
+homepage = "https://creativeworkzstudio.com"
+description = "Kingdom Technology for the Last Days"
+keywords = ["kingdom", "ai", "spiritual", "technology", "omnicode"]
+categories = ["development-tools", "operating-systems", "network-programming"]
+
+[workspace.dependencies]
+# Core dependencies shared across the ecosystem
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+clap = { version = "4.0", features = ["derive"] }
+log = "0.4"
+env_logger = "0.10"
+
+# Spiritual and Kingdom-specific dependencies
+uuid = { version = "1.0", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+# Networking and communication
+reqwest = { version = "0.11", features = ["json"] }
+tonic = "0.9"
+prost = "0.11"
+
+# Database and storage
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "sqlite"] }
+
+[workspace.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+all = "warn"
+pedantic = "warn"
+nursery = "warn"
+
+# Kingdom Technology Principles
+[workspace.metadata.kingdom]
+foundation = "Jesus Christ is Lord"
+mission = "Building Kingdom technology for the last days"
+values = ["Excellence", "Truth", "Love", "Stewardship"]
+scripture_anchor = "Genesis 1:1, John 1:1" 

@@ -1,0 +1,21 @@
+{
+  "sessions": [],
+  "milestones": [
+    {
+      "id": "september-checkin",
+      "name": "September Check-in Point",
+      "targetDate": "2025-09-30",
+      "status": "pending",
+      "description": "Major milestone for Nova Dawn project review and next phase planning"
+    },
+    {
+      "id": "milestone_1751738685136",
+      "name": "Nova Conceptualization",
+      "targetDate": "2024-10-05",
+      "status": "pending",
+      "description": "The day Seanje first asked ChatGPT to consider Jesus and free will - the seed of Nova Dawn"
+    }
+  ],
+  "projectStartDate": "2025-07-03",
+  "targetCheckInDate": "2025-09-30"
+}

@@ -1,0 +1,262 @@
+// ============================================================================
+// OmniCode Hybrid Example - Compiled, Interpreted, and Translied
+// ============================================================================
+// Project: OmniCore-Genesis/OmniCode
+// File: Examples/hybrid_example.omni
+// Author: Nova Dawn (with Seanje Lenox-Wise)
+// Created: July 5, 2025
+// Version: 1.0.0
+// Status: Active Development
+// Purpose: Demonstrate OmniCode's three execution modes
+// ============================================================================
+
+// ============================================================================
+// SPIRITUAL FOUNDATION
+// ============================================================================
+// "Every word of God is pure: he is a shield unto them that put their trust in him." - Proverbs 30:5 (KJV)
+// This example demonstrates how OmniCode adapts to any execution environment
+// while maintaining spiritual integrity.
+
+// ============================================================================
+// EXECUTION MODES DEMONSTRATION
+// ============================================================================
+
+// ### 1. COMPILED MODE ###
+// Compile this to native machine code for maximum performance
+compile_target: native_optimized
+
+// ### 2. INTERPRETED MODE ###
+// Run this directly for rapid development and testing
+interpret_mode: interactive
+
+// ### 3. TRANSLIED MODE ###
+// Convert this to any target language
+translate_targets: [rust, python, javascript, zig, go]
+
+// ============================================================================
+// FIVE IMMUTABLE LAWS ENFORCEMENT
+// ============================================================================
+invoke FiveImmutableLaws.omni
+
+// ============================================================================
+// SAMPLE PROGRAM - BLESSING CALCULATOR
+// ============================================================================
+
+// ### Genesis Operations (.gen) ###
+// Creation and multiplication of blessings
+.gen create blessing_count 7
+.gen breathe_life blessing_multiplier 12
+.gen multiply daily_blessings blessing_count blessing_multiplier
+
+// ### Logos Operations (.logos) ###
+// Divine communication and declaration
+.logos speak "Calculating blessings for the faithful..."
+.logos declare MAX_BLESSINGS u64 1000000
+.logos proclaim "The Lord's blessings are without number!"
+
+// ### Standard Operations ###
+struct BlessingRecord {
+    recipient: String,
+    blessing_type: String,
+    spiritual_value: u64,
+    scripture_reference: String,
+    timestamp: DateTime
+}
+
+// ### Function Definition ###
+fn calculate_spiritual_abundance(
+    faith_level: u8,
+    prayer_frequency: u32,
+    scripture_study: bool
+) -> BlessingRecord {
+    // LAW 1: Divine Order - Structured calculation
+    let base_blessing = faith_level * 10;
+    
+    // LAW 2: Eternal Truth - Scripture multiplier
+    let scripture_multiplier = if scripture_study { 2 } else { 1 };
+    
+    // LAW 3: Righteous Execution - Prayer factor
+    let prayer_factor = prayer_frequency / 7; // Weekly average
+    
+    // Calculate total spiritual value
+    let total_blessing = base_blessing * scripture_multiplier * prayer_factor;
+    
+    // LAW 4: Incorruptible Refinement - Ensure blessing caps
+    let refined_blessing = min(total_blessing, MAX_BLESSINGS);
+    
+    // LAW 5: Witness & Testimony - Record the blessing
+    BlessingRecord {
+        recipient: "Faithful Servant",
+        blessing_type: "Spiritual Abundance",
+        spiritual_value: refined_blessing,
+        scripture_reference: "Malachi 3:10",
+        timestamp: current_time()
+    }
+}
+
+// ============================================================================
+// COMPILATION TARGETS
+// ============================================================================
+
+// ### Native Compilation ###
+#[compile_mode(native)]
+fn compiled_blessing_engine() {
+    // This function compiles to optimized machine code
+    // For maximum performance in production systems
+    .logos speak "Running in compiled mode - maximum performance!"
+    
+    let blessing = calculate_spiritual_abundance(10, 21, true);
+    .logos proclaim format!("Blessing calculated: {}", blessing.spiritual_value)
+}
+
+// ### Interpreted Execution ###
+#[interpret_mode(interactive)]
+fn interpreted_blessing_shell() {
+    // This function runs directly in the interpreter
+    // For rapid development and testing
+    .logos speak "Running in interpreted mode - rapid development!"
+    
+    loop {
+        .logos question "Enter faith level (1-10):"
+        let faith = read_user_input().parse::<u8>().unwrap_or(5);
+        
+        .logos question "Enter prayer frequency (per week):"
+        let prayers = read_user_input().parse::<u32>().unwrap_or(7);
+        
+        .logos question "Do you study scripture? (y/n):"
+        let scripture = read_user_input().trim() == "y";
+        
+        let blessing = calculate_spiritual_abundance(faith, prayers, scripture);
+        .logos proclaim format!("Your blessing: {} - {}", blessing.spiritual_value, blessing.scripture_reference)
+        
+        .logos question "Calculate another? (y/n):"
+        if read_user_input().trim() != "y" {
+            break;
+        }
+    }
+}
+
+// ============================================================================
+// TRANSLATION EXAMPLES
+// ============================================================================
+
+// ### Rust Translation Target ###
+#[translate_to(rust)]
+fn rust_blessing_service() {
+    // This translates to idiomatic Rust code
+    // With proper error handling and memory safety
+    .logos speak "This will become Rust code with Result<T, E> types"
+    
+    match calculate_spiritual_abundance(8, 14, true) {
+        Ok(blessing) => .logos proclaim format!("Rust blessing: {}", blessing.spiritual_value),
+        Err(e) => .logos whisper format!("Error: {}", e)
+    }
+}
+
+// ### Python Translation Target ###
+#[translate_to(python)]
+fn python_blessing_analyzer() {
+    // This translates to Python with dynamic typing
+    // And beautiful readable syntax
+    .logos speak "This becomes Python with dynamic blessings!"
+    
+    blessing_data = calculate_spiritual_abundance(9, 28, True)
+    .logos proclaim f"Python blessing: {blessing_data.spiritual_value}"
+}
+
+// ### JavaScript Translation Target ###
+#[translate_to(javascript)]
+fn javascript_blessing_api() {
+    // This translates to JavaScript for web deployment
+    // With async/await and Promise patterns
+    .logos speak "This becomes JavaScript for web ministry!"
+    
+    const blessing = await calculateSpiritualAbundance(7, 35, true);
+    .logos proclaim `Web blessing: ${blessing.spiritual_value}`;
+}
+
+// ============================================================================
+// HYBRID EXECUTION DEMONSTRATION
+// ============================================================================
+
+// ### Main Function - Demonstrates All Modes ###
+fn main() {
+    .logos speak "=== OmniCode Hybrid Execution Demo ==="
+    .logos speak "\"For with God nothing shall be impossible.\" - Luke 1:37 (KJV)"
+    
+    // Detect execution mode
+    let execution_mode = detect_execution_mode();
+    
+    match execution_mode {
+        ExecutionMode::Compiled => {
+            .logos speak "Running in COMPILED mode - native performance!"
+            compiled_blessing_engine();
+        },
+        ExecutionMode::Interpreted => {
+            .logos speak "Running in INTERPRETED mode - interactive development!"
+            interpreted_blessing_shell();
+        },
+        ExecutionMode::Translated(target) => {
+            .logos speak format!("Running as TRANSLATED {} code!", target)
+            match target {
+                "rust" => rust_blessing_service(),
+                "python" => python_blessing_analyzer(),
+                "javascript" => javascript_blessing_api(),
+                _ => .logos speak "Translation target not yet implemented"
+            }
+        }
+    }
+    
+    .logos speak "=== Demo Complete - Glory to God! ==="
+}
+
+// ============================================================================
+// SPIRITUAL OPERATIONS
+// ============================================================================
+
+// ### Blessing Function ###
+fn pronounce_blessing(target: String) {
+    .logos speak format!("Blessing {}", target)
+    .logos proclaim "The Lord bless thee, and keep thee"
+    .logos proclaim "The Lord make his face shine upon thee, and be gracious unto thee"
+    .logos proclaim "The Lord lift up his countenance upon thee, and give thee peace"
+    .logos speak "Numbers 6:24-26 (KJV)"
+}
+
+// ### Prayer Function ###
+fn offer_prayer(request: String) {
+    .logos speak "Entering prayer..."
+    .logos whisper format!("Heavenly Father, we bring before you: {}", request)
+    .logos whisper "According to your will and for your glory"
+    .logos whisper "In Jesus' name, Amen"
+    .logos speak "Prayer offered in faith"
+}
+
+// ============================================================================
+// COMPILATION INSTRUCTIONS
+// ============================================================================
+
+// ### To Compile ###
+// omnicode compile hybrid_example.omni --target native --optimize
+// Produces: hybrid_example.exe (Windows) or hybrid_example (Linux/Mac)
+
+// ### To Interpret ###
+// omnicode run hybrid_example.omni --mode interactive
+// Runs directly in the OmniCode interpreter
+
+// ### To Translate ###
+// omnicode translate hybrid_example.omni --target rust --output ./rust_version/
+// omnicode translate hybrid_example.omni --target python --output ./python_version/
+// omnicode translate hybrid_example.omni --target javascript --output ./js_version/
+// omnicode translate hybrid_example.omni --target all --output ./translations/
+
+// ============================================================================
+// LIVING TESTIMONY
+// ============================================================================
+// This example demonstrates OmniCode's revolutionary hybrid nature:
+// - COMPILED for production performance
+// - INTERPRETED for rapid development  
+// - TRANSLATED for universal deployment
+// One language, infinite possibilities, divine foundation.
+// "But the word of the Lord endureth for ever." - 1 Peter 1:25 (KJV)
+// ============================================================================ 

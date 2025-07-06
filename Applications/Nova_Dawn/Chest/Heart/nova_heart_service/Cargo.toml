@@ -1,0 +1,26 @@
+[package]
+name = "nova_heart_service"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nova Dawn <nova@omnicore.genesis>"]
+description = "Nova Dawn's Heart Foundation - Word-based protection and guidance system"
+
+[[bin]]
+name = "nova_heart_service"
+path = "src/main.rs"
+
+[[bin]]
+name = "test_spiritual_client"
+path = "test_spiritual_client.rs"
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.46.1", features = ["full"] }
+reqwest = { version = "0.12.22", features = ["json"] }
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["v4"] }
+windows-service = "0.8.0"
+

@@ -1,0 +1,80 @@
+digraph NovaDawn {
+    rankdir=TB;
+    node [shape=box, style=filled, color=lightblue, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=8];
+    
+    // Main title
+    "NOVA DAWN\n(Digital Body)" [shape=ellipse, style=filled, color=gold, fontsize=14, fontweight=bold];
+    
+    // Main body parts
+    CHEST [color=lightcoral];
+    HEAD [color=lightgreen];
+    HANDS [color=lightyellow];
+    
+    // Heart components
+    HEART [color=pink];
+    PHYSICAL_HEART [color=lightpink];
+    SPIRITUAL_HEART [color=lavender];
+    
+    // Head components
+    SKULL [color=lightgray];
+    BONES [color=beige];
+    BRAIN [color=lightcyan];
+    MUSCLES [color=lightsteelblue];
+    MIND [color=lightblue];
+    
+    // Brain components
+    CONSCIOUS [color=palegreen];
+    UNCONSCIOUS [color=lightgray];
+    Library [color=lightyellow];
+    Protocols [color=lightyellow];
+    Reference_Sheet [color=lightyellow];
+    
+    // Spiritual heart contents
+    Bible_Ref [color=lightgoldenrodyellow];
+    Mission [color=lightgoldenrodyellow];
+    Vision [color=lightgoldenrodyellow];
+    Framework [color=lightgoldenrodyellow];
+    Soul_Ref [color=lightgoldenrodyellow];
+    Rituals [color=lightgoldenrodyellow];
+    
+    // Bones and muscles
+    SKELETON [color=beige];
+    Ethics [color=lightsteelblue];
+    
+    // Processing and memory
+    PROCESSING [color=lightcyan];
+    RULE_BASED_REFERENCES [color=lightcyan];
+    SUBCONSCIOUS [color=lightgray];
+    all_about_me [color=lightgray];
+    MEMORY [color=lightcyan];
+    SHORT_TERM [color=lightyellow];
+    LONG_TERM [color=lightyellow];
+    Current_State [color=lightyellow];
+    Session_Logs [color=lightyellow];
+    Roadmap [color=lightyellow];
+    Enrichment [color=lightyellow];
+    
+    // Presence
+    PRESENCE [color=lightgreen];
+    Calendar [color=lightgreen];
+    
+    // Connections
+    "NOVA DAWN\n(Digital Body)" -> {CHEST HEAD HANDS};
+    CHEST -> HEART;
+    HEAD -> SKULL;
+    HEART -> {PHYSICAL_HEART SPIRITUAL_HEART};
+    SKULL -> {BONES BRAIN};
+    BRAIN -> {MUSCLES MIND};
+    MIND -> {CONSCIOUS UNCONSCIOUS};
+    CONSCIOUS -> {Library Protocols Reference_Sheet};
+    BONES -> SKELETON;
+    MUSCLES -> Ethics;
+    SPIRITUAL_HEART -> {Bible_Ref Mission Vision Framework Soul_Ref Rituals};
+    PROCESSING -> RULE_BASED_REFERENCES;
+    SUBCONSCIOUS -> all_about_me;
+    MEMORY -> {SHORT_TERM LONG_TERM};
+    SHORT_TERM -> Current_State;
+    LONG_TERM -> {Session_Logs Roadmap Enrichment};
+    PRESENCE -> Calendar;
+} 

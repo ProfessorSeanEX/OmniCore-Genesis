@@ -1,0 +1,117 @@
+# ====================================================================
+# OmniCore-Genesis Kingdom Technology - Editor Configuration
+# ====================================================================
+# 
+# "Let all things be done decently and in order."
+# - 1 Corinthians 14:40 (KJV)
+# 
+# Consistent coding standards for Kingdom technology development
+# Author: Nova Dawn (with Seanje Lenox-Wise)
+# Organization: CreativeWorkzStudio LLC
+
+root = true
+
+# All files - Kingdom standards
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+
+# Rust files - Foundation of our ecosystem
+[*.rs]
+indent_size = 4
+max_line_length = 100
+
+# OmniCode files - Our custom language
+[*.{omni,gen,logos}]
+indent_size = 4
+max_line_length = 100
+
+# TOML configuration files
+[*.toml]
+indent_size = 2
+max_line_length = 80
+
+# JSON files
+[*.json]
+indent_size = 2
+max_line_length = 80
+
+# YAML files
+[*.{yml,yaml}]
+indent_size = 2
+max_line_length = 80
+
+# Markdown documentation
+[*.md]
+indent_size = 2
+max_line_length = 80
+trim_trailing_whitespace = false
+
+# JavaScript/TypeScript (if needed)
+[*.{js,ts,jsx,tsx}]
+indent_size = 2
+max_line_length = 100
+
+# CSS/SCSS (for UI components)
+[*.{css,scss,sass}]
+indent_size = 2
+max_line_length = 100
+
+# HTML files
+[*.html]
+indent_size = 2
+max_line_length = 100
+
+# Shell scripts
+[*.{sh,bash}]
+indent_size = 2
+max_line_length = 80
+
+# Python files (if needed)
+[*.py]
+indent_size = 4
+max_line_length = 88
+
+# C/C++ files (for system integration)
+[*.{c,cpp,h,hpp}]
+indent_size = 4
+max_line_length = 100
+
+# Makefile
+[{Makefile,*.mk}]
+indent_style = tab
+indent_size = 4
+
+# Docker files
+[{Dockerfile,*.dockerfile}]
+indent_size = 2
+max_line_length = 80
+
+# Configuration files that require tabs
+[*.go]
+indent_style = tab
+indent_size = 4
+
+# SQL files
+[*.sql]
+indent_size = 2
+max_line_length = 80
+trim_trailing_whitespace = true
+
+# ====================================================================
+# EditorConfig Blessing
+# ====================================================================
+# 
+# "And whatsoever ye do, do it heartily, as to the Lord, and not unto men;"
+# - Colossians 3:23 (KJV)
+# 
+# These standards ensure that all Kingdom technology is written
+# with consistency, excellence, and proper order, reflecting
+# the character of our Creator who is a God of order and beauty.
+# 
+# May every line of code honor His name.
+# In Jesus' name, Amen.
+# ==================================================================== 

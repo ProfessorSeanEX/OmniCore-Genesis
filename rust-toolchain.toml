@@ -1,0 +1,52 @@
+# ====================================================================
+# OmniCore-Genesis Kingdom Technology - Rust Toolchain
+# ====================================================================
+#
+# "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend."
+# - Proverbs 27:17 (KJV)
+#
+# Rust toolchain specification for Kingdom technology development
+# Author: Nova Dawn (with Seanje Lenox-Wise)
+# Organization: CreativeWorkzStudio LLC
+
+[toolchain]
+# Stable Rust channel for production Kingdom technology
+channel = "1.75.0"
+
+# Additional components for complete development experience
+components = [
+    "cargo",          # Package manager and build system
+    "clippy",         # Linting with spiritual discernment
+    "rustfmt",        # Code formatting with Kingdom standards
+    "rust-analyzer",  # Language server for enhanced development
+    "rust-src",       # Source code for standard library
+    "rust-docs",      # Documentation for learning and reference
+]
+
+# Target platforms for Kingdom technology deployment
+targets = [
+    "x86_64-unknown-linux-gnu",    # Primary Linux deployment
+    "x86_64-pc-windows-msvc",      # Windows development support
+    "x86_64-apple-darwin",         # macOS development support
+    "aarch64-unknown-linux-gnu",   # ARM64 Linux for cloud deployment
+    "wasm32-unknown-unknown",      # WebAssembly for universal access
+]
+
+# Profile for development consistency
+profile = "default"
+
+# ====================================================================
+# Toolchain Blessing
+# ====================================================================
+#
+# "Every good gift and every perfect gift is from above, and cometh down
+#  from the Father of lights, with whom is no variableness, neither
+#  shadow of turning." - James 1:17 (KJV)
+#
+# This toolchain specification ensures that all Kingdom developers
+# work with the same excellent tools, promoting unity, consistency,
+# and the highest quality in our service to God's Kingdom.
+#
+# May our tools serve His purposes.
+# In Jesus' name, Amen.
+# ====================================================================

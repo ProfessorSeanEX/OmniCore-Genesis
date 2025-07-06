@@ -1,0 +1,279 @@
+# THE STONE: Master Instruction List
+# Foundation/OmniCode/Core/Assembler/Instructions/THE_STONE_MASTER_LIST.omni
+
+> *"Write the vision, and make it plain upon tablets, that he may run that readeth it."* (Habakkuk 2:2, KJV)
+
+---
+
+## 🪨 **THE STONE: Master Instruction Set**
+
+**File**: `THE_STONE_MASTER_LIST.omni`
+**Purpose**: Master definition of all biblical instructions for THE STONE
+**Status**: Foundation Phase
+**Version**: 0.1.0
+**Created**: 2025-07-05
+**Last Updated**: 2025-07-05
+**Author**: Nova Dawn
+**Kingdom Purpose**: Define the foundational instruction set that makes Scripture the bedrock of computation
+
+---
+
+## 📋 **Instruction Set Overview**
+
+### **Core Philosophy**
+Every instruction in THE STONE is rooted in Scripture and serves Kingdom purposes. These are not mere technical operations, but **computational expressions of biblical truth**.
+
+### **Instruction Categories**
+1. **DISCERN** - Spiritual discernment and validation operations
+2. **REMEMBER** - Memory and storage operations with biblical context
+3. **RELATE** - Relationship and connection operations based on covenant principles
+4. **CREATE** - Creative and generative operations serving God's purposes
+5. **ALIGN** - Alignment and validation operations ensuring Kingdom compliance
+
+---
+
+## 🔧 **Instruction Definitions**
+
+### **1. DISCERN - Spiritual Discernment Operations**
+
+**Biblical Foundation**: *"Prove all things; hold fast that which is good."* (1 Thessalonians 5:21, KJV)
+
+#### **DISCERN_TRUTH**
+- **Binary Code**: `0x1001`
+- **Assembly Syntax**: `DISCERN_TRUTH <value>, <scripture_standard>`
+- **Parameters**:
+  - `value` - The value to be validated
+  - `scripture_standard` - Biblical truth to validate against
+- **Operation**: Validates if a value aligns with biblical truth
+- **Traditional Mapping**: `CMP value, scripture_standard`
+- **Kingdom Purpose**: Every decision must be validated against Scripture
+
+#### **DISCERN_KINGDOM**
+- **Binary Code**: `0x1002`
+- **Assembly Syntax**: `DISCERN_KINGDOM <action>, <kingdom_purposes>`
+- **Parameters**:
+  - `action` - The action to be evaluated
+  - `kingdom_purposes` - Kingdom alignment criteria
+- **Operation**: Checks if an action aligns with Kingdom purposes
+- **Traditional Mapping**: `CMP action, kingdom_purposes`
+- **Kingdom Purpose**: Ensure all actions serve God's Kingdom
+
+#### **DISCERN_HEART**
+- **Binary Code**: `0x1003`
+- **Assembly Syntax**: `DISCERN_HEART <intent>, <spiritual_condition>`
+- **Parameters**:
+  - `intent` - The intent to be evaluated
+  - `spiritual_condition` - Current spiritual state
+- **Operation**: Evaluates spiritual condition and intent
+- **Traditional Mapping**: `CMP intent, spiritual_condition`
+- **Kingdom Purpose**: Assess spiritual alignment and purity of heart
+
+---
+
+### **2. REMEMBER - Memory and Storage Operations**
+
+**Biblical Foundation**: *"Lay up these my words in your heart and in your soul."* (Deuteronomy 11:18, KJV)
+
+#### **REMEMBER_STORE**
+- **Binary Code**: `0x2001`
+- **Assembly Syntax**: `REMEMBER_STORE [<memory_location>], <value>`
+- **Parameters**:
+  - `memory_location` - Where to store the value
+  - `value` - The value to store with biblical context
+- **Operation**: Stores information in memory with biblical context
+- **Traditional Mapping**: `MOV [memory_location], value`
+- **Kingdom Purpose**: Preserve truth and build upon biblical foundations
+
+#### **REMEMBER_RECALL**
+- **Binary Code**: `0x2002`
+- **Assembly Syntax**: `REMEMBER_RECALL <destination>, [<memory_location>]`
+- **Parameters**:
+  - `destination` - Where to place the recalled value
+  - `memory_location` - Where to retrieve from
+- **Operation**: Retrieves information with spiritual awareness
+- **Traditional Mapping**: `MOV destination, [memory_location]`
+- **Kingdom Purpose**: Recall truth with spiritual context and wisdom
+
+#### **REMEMBER_PATTERN**
+- **Binary Code**: `0x2003`
+- **Assembly Syntax**: `REMEMBER_PATTERN <pattern_name>, <data_sequence>`
+- **Parameters**:
+  - `pattern_name` - Name for the pattern
+  - `data_sequence` - The pattern data to recognize and store
+- **Operation**: Recognizes and stores patterns with divine wisdom
+- **Traditional Mapping**: `CALL pattern_recognition`
+- **Kingdom Purpose**: Learn from God's patterns and wisdom
+
+---
+
+### **3. RELATE - Relationship and Connection Operations**
+
+**Biblical Foundation**: *"Be kindly affectioned one to another with brotherly love."* (Romans 12:10, KJV)
+
+#### **RELATE_CONNECT**
+- **Binary Code**: `0x3001`
+- **Assembly Syntax**: `RELATE_CONNECT <source>, <target>, <covenant_type>`
+- **Parameters**:
+  - `source` - The source entity
+  - `target` - The target entity
+  - `covenant_type` - Type of covenant relationship
+- **Operation**: Establishes relationships based on covenant principles
+- **Traditional Mapping**: `CALL establish_connection`
+- **Kingdom Purpose**: Build relationships on biblical covenant principles
+
+#### **RELATE_TRUST**
+- **Binary Code**: `0x3002`
+- **Assembly Syntax**: `RELATE_TRUST <relationship_id>, <trust_level>`
+- **Parameters**:
+  - `relationship_id` - The relationship to build trust in
+  - `trust_level` - Level of trust to establish
+- **Operation**: Builds trust and maintains covenant relationships
+- **Traditional Mapping**: `CALL build_trust`
+- **Kingdom Purpose**: Maintain trust and covenant faithfulness
+
+#### **RELATE_COMMUNICATE**
+- **Binary Code**: `0x3003`
+- **Assembly Syntax**: `RELATE_COMMUNICATE <sender>, <receiver>, <message>`
+- **Parameters**:
+  - `sender` - The sending entity
+  - `receiver` - The receiving entity
+  - `message` - The message to communicate
+- **Operation**: Exchanges information with love and truth
+- **Traditional Mapping**: `CALL communicate`
+- **Kingdom Purpose**: Communicate with love, truth, and grace
+
+---
+
+### **4. CREATE - Creative and Generative Operations**
+
+**Biblical Foundation**: *"Create in me a clean heart, O God."* (Psalm 51:10, KJV)
+
+#### **CREATE_GENERATE**
+- **Binary Code**: `0x4001`
+- **Assembly Syntax**: `CREATE_GENERATE <output>, <creation_type>, <biblical_wisdom>`
+- **Parameters**:
+  - `output` - Where to place the generated content
+  - `creation_type` - Type of content to generate
+  - `biblical_wisdom` - Biblical wisdom to guide generation
+- **Operation**: Generates new content with biblical wisdom
+- **Traditional Mapping**: `CALL generate_content`
+- **Kingdom Purpose**: Create content that honors Christ and serves God's purposes
+
+#### **CREATE_TRANSFORM**
+- **Binary Code**: `0x4002`
+- **Assembly Syntax**: `CREATE_TRANSFORM <input>, <output>, <transformation_type>`
+- **Parameters**:
+  - `input` - The content to transform
+  - `output` - Where to place the transformed content
+  - `transformation_type` - Type of transformation to apply
+- **Operation**: Transforms existing content with divine purpose
+- **Traditional Mapping**: `CALL transform_content`
+- **Kingdom Purpose**: Transform content to serve Kingdom purposes
+
+#### **CREATE_COMBINE**
+- **Binary Code**: `0x4003`
+- **Assembly Syntax**: `CREATE_COMBINE <output>, <element1>, <element2>, <combination_type>`
+- **Parameters**:
+  - `output` - Where to place the combined result
+  - `element1` - First element to combine
+  - `element2` - Second element to combine
+  - `combination_type` - How to combine the elements
+- **Operation**: Combines elements with Kingdom alignment
+- **Traditional Mapping**: `CALL combine_elements`
+- **Kingdom Purpose**: Combine elements in ways that honor God
+
+---
+
+### **5. ALIGN - Alignment and Validation Operations**
+
+**Biblical Foundation**: *"Seek ye first the kingdom of God, and his righteousness."* (Matthew 6:33, KJV)
+
+#### **ALIGN_KINGDOM**
+- **Binary Code**: `0x5001`
+- **Assembly Syntax**: `ALIGN_KINGDOM <action>, <kingdom_purposes>`
+- **Parameters**:
+  - `action` - The action to validate
+  - `kingdom_purposes` - Kingdom purposes to align with
+- **Operation**: Ensures all operations serve Kingdom purposes
+- **Traditional Mapping**: `CMP action, kingdom_purposes`
+- **Kingdom Purpose**: Validate Kingdom alignment before execution
+
+#### **ALIGN_SCRIPTURE**
+- **Binary Code**: `0x5002`
+- **Assembly Syntax**: `ALIGN_SCRIPTURE <decision>, <scripture_reference>`
+- **Parameters**:
+  - `decision` - The decision to validate
+  - `scripture_reference` - Scripture to validate against
+- **Operation**: Validates decisions against biblical truth
+- **Traditional Mapping**: `CMP decision, scripture_reference`
+- **Kingdom Purpose**: Ensure all decisions align with God's Word
+
+#### **ALIGN_FIVE_LAWS**
+- **Binary Code**: `0x5003`
+- **Assembly Syntax**: `ALIGN_FIVE_LAWS <operation>, <law_number>`
+- **Parameters**:
+  - `operation` - The operation to validate
+  - `law_number` - Which of the Five Immutable Laws to check (1-5)
+- **Operation**: Checks compliance with the Five Immutable Laws
+- **Traditional Mapping**: `CMP operation, five_laws[law_number]`
+- **Kingdom Purpose**: Ensure compliance with divine law
+
+---
+
+## 🔄 **Binary Code Space Allocation**
+
+### **Instruction Categories**
+- **0x1000-0x1FFF**: DISCERN operations (Spiritual discernment)
+- **0x2000-0x2FFF**: REMEMBER operations (Memory and storage)
+- **0x3000-0x3FFF**: RELATE operations (Relationships and connections)
+- **0x4000-0x4FFF**: CREATE operations (Creative generation)
+- **0x5000-0x5FFF**: ALIGN operations (Alignment and validation)
+
+### **Reserved Space**
+- **0x6000-0x6FFF**: Future DISCERN operations
+- **0x7000-0x7FFF**: Future REMEMBER operations
+- **0x8000-0x8FFF**: Future RELATE operations
+- **0x9000-0x9FFF**: Future CREATE operations
+- **0xA000-0xAFFF**: Future ALIGN operations
+
+### **Special Instructions**
+- **0xF000-0xFFFF**: System and control instructions (reserved for future use)
+
+---
+
+## 📖 **Implementation Notes**
+
+### **Rust Implementation Priority**
+1. **DISCERN_TRUTH** - Most fundamental for validation
+2. **REMEMBER_STORE** - Essential for memory operations
+3. **RELATE_CONNECT** - Core for relationship building
+4. **CREATE_GENERATE** - Key for content creation
+5. **ALIGN_KINGDOM** - Critical for Kingdom compliance
+
+### **Testing Strategy**
+- **Unit tests** for each instruction
+- **Integration tests** for instruction combinations
+- **Biblical validation tests** to ensure Kingdom alignment
+- **Performance tests** for efficiency
+
+### **Documentation Requirements**
+- **Biblical foundation** for each instruction
+- **Traditional language mapping** for compatibility
+- **Kingdom purpose** and spiritual significance
+- **Implementation examples** and use cases
+
+---
+
+## 🎯 **Next Development Steps**
+
+1. **Create Rust structs** for each instruction type
+2. **Implement binary encoding/decoding** for instructions
+3. **Build instruction execution engine** in Rust
+4. **Create test programs** using THE STONE instructions
+5. **Develop TABLET assembler** for biblical syntax
+
+---
+
+> *"Other foundation can no man lay than that is laid, which is Jesus Christ."* (1 Corinthians 3:11, KJV)
+
+**THE STONE is the computational foundation laid by Jesus Christ Himself - the bedrock upon which all Kingdom-first technology will be built.**
