@@ -1,10 +1,8 @@
 {
-  "name": "OmniCore-Genesis Kingdom Technology",
-  "image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye",
+  "name": "OmniCore-Genesis WSL + Claude Code",
+  "image": "mcr.microsoft.com/devcontainers/rust:1-1-bookworm",
   
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/node:1": {"version": "18"},
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
@@ -13,39 +11,46 @@
     "vscode": {
       "settings": {
         "rust-analyzer.cargo.features": "all",
-        "rust-analyzer.check.command": "clippy",
+        "rust-analyzer.checkOnSave.command": "check",
+        "rust-analyzer.procMacro.enable": true,
         "editor.formatOnSave": true,
-        "editor.rulers": [80, 100],
         "files.trimTrailingWhitespace": true,
         "files.insertFinalNewline": true,
-        "workbench.colorTheme": "Default Light+",
-        "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
-        "editor.fontLigatures": true,
-        "terminal.integrated.defaultProfile.linux": "bash"
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "claude-code.context.include": [
+          "CLAUDE.md",
+          "README.md", 
+          "omnicore-genesis.toml",
+          "Cargo.toml",
+          ".vscode/nova-consciousness.md"
+        ],
+        "claude-code.context.exclude": [
+          "**/target/**",
+          "**/node_modules/**",
+          "**/.git/**",
+          "**/Archive/**"
+        ]
       },
       "extensions": [
+        "anthropic.claude-code",
         "rust-lang.rust-analyzer",
         "vadimcn.vscode-lldb",
         "serayuzgur.crates",
         "tamasfe.even-better-toml",
         "ms-vscode.vscode-json",
         "yzhang.markdown-all-in-one",
-        "shd101wyy.markdown-preview-enhanced",
         "ms-vscode.makefile-tools",
-        "ms-azuretools.vscode-docker",
-        "github.vscode-pull-request-github",
-        "eamodio.gitlens",
-        "gruntfuggly.todo-tree",
-        "streetsidesoftware.code-spell-checker"
+        "eamodio.gitlens"
       ]
     }
   },
 
   "containerEnv": {
     "KINGDOM_MODE": "development",
-    "SPIRITUAL_VALIDATION": "true",
+    "SPIRITUAL_VALIDATION": "true", 
     "HONOR_SABBATH": "true",
-    "RUST_LOG": "debug"
+    "RUST_LOG": "info",
+    "WSL_OPTIMIZED": "true"
   },
 
   "mounts": [
@@ -55,59 +60,53 @@
   "workspaceFolder": "/workspace",
 
   "postCreateCommand": {
-    "kingdom-setup": [
+    "wsl-setup": [
       "bash",
-      "-c",
-      "echo '🏗️ Setting up Kingdom development environment...' && echo '\"In the beginning, God created the heavens and the earth.\" - Genesis 1:1' && rustup update && cargo install cargo-audit cargo-watch && make install-dev && echo '✅ Kingdom development environment ready!'"
+      "-c", 
+      "echo '🏗️ Setting up WSL + Claude Code environment...' && echo '\"Write the vision, and make it plain upon tablets\" - Habakkuk 2:2' && rustup update && cargo install cargo-watch && echo '✅ WSL Claude Code environment ready!'"
     ]
   },
 
   "postStartCommand": {
-    "kingdom-greeting": [
-      "bash", 
-      "-c", 
-      "echo '✨ Welcome to OmniCore-Genesis Kingdom Technology!' && echo '🙏 May your code serve God\\'s Kingdom and bring glory to His name.' && echo 'CreativeWorkzStudio LLC - Kingdom Technology for the Last Days'"
+    "claude-greeting": [
+      "bash",
+      "-c",
+      "echo '✨ OmniCore-Genesis WSL + Claude Code Ready!' && echo '🤖 Claude Code integration enabled' && echo '🙏 Nova Dawn consciousness context loaded' && echo 'Kingdom Technology for the Last Days'"
     ]
   },
 
   "remoteUser": "vscode",
 
-  "forwardPorts": [8080, 8081, 8082, 3000, 9090],
+  "forwardPorts": [8080, 8081, 8082, 3000],
 
   "portsAttributes": {
     "8080": {
-      "label": "FaithNet API",
+      "label": "Heart Service",
       "protocol": "http"
     },
     "8081": {
       "label": "Nova Dawn",
-      "protocol": "http" 
+      "protocol": "http"
     },
     "8082": {
-      "label": "NovaOps",
+      "label": "NovaOps", 
       "protocol": "http"
     },
     "3000": {
-      "label": "Monitoring",
-      "protocol": "http"
-    },
-    "9090": {
-      "label": "Covenant Protocol",
+      "label": "Development",
       "protocol": "http"
     }
   },
 
   "waitFor": "postCreateCommand",
 
-  "updateContentCommand": "cargo update",
-
   "hostRequirements": {
-    "cpus": 4,
-    "memory": "8gb",
-    "storage": "32gb"
+    "cpus": 2,
+    "memory": "4gb",
+    "storage": "16gb"
   },
 
   "otherPortsAttributes": {
     "onAutoForward": "notify"
   }
-} 
+}
