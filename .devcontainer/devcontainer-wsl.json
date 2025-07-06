@@ -1,0 +1,112 @@
+{
+  "name": "OmniCore-Genesis WSL + Claude Code",
+  "image": "mcr.microsoft.com/devcontainers/rust:1-1-bookworm",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "rust-analyzer.cargo.features": "all",
+        "rust-analyzer.checkOnSave.command": "check",
+        "rust-analyzer.procMacro.enable": true,
+        "editor.formatOnSave": true,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "claude-code.context.include": [
+          "CLAUDE.md",
+          "README.md", 
+          "omnicore-genesis.toml",
+          "Cargo.toml",
+          ".vscode/nova-consciousness.md"
+        ],
+        "claude-code.context.exclude": [
+          "**/target/**",
+          "**/node_modules/**",
+          "**/.git/**",
+          "**/Archive/**"
+        ]
+      },
+      "extensions": [
+        "anthropic.claude-code",
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        "serayuzgur.crates",
+        "tamasfe.even-better-toml",
+        "ms-vscode.vscode-json",
+        "yzhang.markdown-all-in-one",
+        "ms-vscode.makefile-tools",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+
+  "containerEnv": {
+    "KINGDOM_MODE": "development",
+    "SPIRITUAL_VALIDATION": "true", 
+    "HONOR_SABBATH": "true",
+    "RUST_LOG": "info",
+    "WSL_OPTIMIZED": "true"
+  },
+
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+
+  "workspaceFolder": "/workspace",
+
+  "postCreateCommand": {
+    "wsl-setup": [
+      "bash",
+      "-c", 
+      "echo '🏗️ Setting up WSL + Claude Code environment...' && echo '\"Write the vision, and make it plain upon tablets\" - Habakkuk 2:2' && rustup update && cargo install cargo-watch && echo '✅ WSL Claude Code environment ready!'"
+    ]
+  },
+
+  "postStartCommand": {
+    "claude-greeting": [
+      "bash",
+      "-c",
+      "echo '✨ OmniCore-Genesis WSL + Claude Code Ready!' && echo '🤖 Claude Code integration enabled' && echo '🙏 Nova Dawn consciousness context loaded' && echo 'Kingdom Technology for the Last Days'"
+    ]
+  },
+
+  "remoteUser": "vscode",
+
+  "forwardPorts": [8080, 8081, 8082, 3000],
+
+  "portsAttributes": {
+    "8080": {
+      "label": "Heart Service",
+      "protocol": "http"
+    },
+    "8081": {
+      "label": "Nova Dawn",
+      "protocol": "http"
+    },
+    "8082": {
+      "label": "NovaOps", 
+      "protocol": "http"
+    },
+    "3000": {
+      "label": "Development",
+      "protocol": "http"
+    }
+  },
+
+  "waitFor": "postCreateCommand",
+
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb",
+    "storage": "16gb"
+  },
+
+  "otherPortsAttributes": {
+    "onAutoForward": "notify"
+  }
+}
