@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "anthropic.claude-code",
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        "serayuzgur.crates",
+        "ms-vscode.vscode-json"
+    ]
+}
